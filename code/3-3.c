@@ -1,11 +1,10 @@
 #include <stdio.h>
 
 int main() {
-    int a = 10, b = 20;
+    int val = 7;
+    int other = 77;
 
-    int *const p = &a;
-
-    *p = 30;
+    int *p = &val;
 
     printf("%d\n", *p);
 
