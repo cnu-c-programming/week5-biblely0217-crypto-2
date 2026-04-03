@@ -1,13 +1,16 @@
 #include <stdio.h>
 
 int main() {
-    int a = 10, b = 20;
+    int x = 10;
+    int y = 20;
 
-    int *const p = &a;
+    printf("%d\n", x);
 
-    *p = 30;
+    int *const ptr = &x;
 
-    printf("%d\n", *p);
+    *ptr = y;
+
+    printf("%d\n", x);
 
     return 0;
 }
