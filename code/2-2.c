@@ -1,11 +1,13 @@
 #include <stdio.h>
 #include <string.h>
 
-void sort_strings(char *arr[], int size) {
+void sort_strings(char **arr, int size) {
+    char *temp;
+
     for (int i = 0; i < size - 1; i++) {
         for (int j = 0; j < size - 1 - i; j++) {
             if (strcmp(arr[j], arr[j + 1]) > 0) {
-                char *temp = arr[j];
+                temp = arr[j];
                 arr[j] = arr[j + 1];
                 arr[j + 1] = temp;
             }
@@ -14,8 +16,8 @@ void sort_strings(char *arr[], int size) {
 }
 
 int main() {
-    char *words[] = {"banana", "apple", "cherry"};
-    int size = 3;
+    char *words[] = {"apple", "ant", "banana", "cherry"};
+    int size = 4;
 
     sort_strings(words, size);
 
