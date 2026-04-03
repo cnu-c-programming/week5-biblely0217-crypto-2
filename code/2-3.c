@@ -1,15 +1,22 @@
 #include <stdio.h>
 
 int main() {
-    int arr[] = {10, 20, 30, 40};
-    int *p = arr;
-    int **pp = &p;
+    int a = 10, b = 20, c = 30, d = 40;
+    int *arr[] = {&a, &b, &c, &d};
+    int **pp = arr;
 
-    printf("%p\n", (void*)arr);
+    int **base = arr;
 
-    for (int i = 0; i < 4; i++) {
-        printf("%p %ld\n", (void*)(pp + i), (long)((char*)(pp + i) - (char*)pp));
-    }
+    printf("%ld\n", (char *)pp - (char *)base);
+
+    pp = pp + 1;
+    printf("%ld\n", (char *)pp - (char *)base);
+
+    pp = pp + 1;
+    printf("%ld\n", (char *)pp - (char *)base);
+
+    pp = pp + 1;
+    printf("%ld\n", (char *)pp - (char *)base);
 
     return 0;
 }
